@@ -1,1 +1,904 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport"content="width=device-width, initial-scale=1.0"> <title>Leanne</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; } body { background-color: #fdfbf7; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; } .container { text-align: center; max-width: 600px; background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 04px 20px rgba(0,0,0,0.05); } h1 { font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; color: #111; } p { font-size: 1.1rem; line-height: 1.6; color: #666; margin-bottom: 30px; } .cta-button { display: inline-block; background-color: #111; color: white; padding: 12px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; letter-spacing: 1px; transition: background 0.3s; } .cta-button:hover { background-color: #444; } .footer { margin-top: 40px; font-size: 0.8rem; color: #999; letter-spacing: 1px; } .legal-links a { color: #999; text-decoration: none; margin: 0 10px; transition: color 0.3s; } .legal-links a:hover { color: #111; } </style> </head> <body> <divclass="container"> <h1>Leanne</h1> <p>Leanne is a warm, judgement-free AI style companion. snap a photo,get personalised outfit ideas from your own wardrobe or new pieces, shop with one tap, and build real confidence at your own pace. With a wardrobe planner, shopping planner, and 113-lesson academy, Leanne is a companion for anyone finding their style, on their terms.</p> <ahref="mailto:hello@leannestyle.co.uk" class="cta-button">Get In Touch</a> <divclass="footer"> <div class="legal-links" style="margin-bottom: 15px;"> <ahref="/privacy">Privacy Policy</a> | <a href="/terms">Terms & Conditions</a> </div> &copy; 2026 LEANNE. ALL RIGHTS RESERVED. </div> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leanne &mdash; Your Style &amp; Confidence Companion</title>
+<meta name="description" content="Leanne is a warm, judgement-free AI style and confidence companion. Get personalised outfit ideas, organise your wardrobe, shop with confidence, and learn at your own pace.">
+<style>
+  :root {
+    --pink: #d46a8f;
+    --pink-dark: #b9557a;
+    --pink-light: #fbeef3;
+    --cream: #fdf9f6;
+    --ink: #2e2620;
+    --ink-soft: #6b5d55;
+    --border: #ecdfe2;
+  }
+ 
+  * { box-sizing: border-box; }
+ 
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+ 
+  header {
+    padding: 56px 24px 40px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--pink-light) 0%, var(--cream) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  header .logo {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--pink-dark);
+    margin: 0 0 8px;
+  }
+ 
+  header .tagline {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin: 0;
+    font-style: italic;
+  }
+ 
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+  }
+ 
+  .description h2 {
+    font-size: 1.4rem;
+    color: var(--pink-dark);
+    margin-bottom: 18px;
+  }
+ 
+  .description p {
+    margin: 0 0 18px;
+    font-size: 1.02rem;
+  }
+ 
+  nav.tabs {
+    display: flex;
+    gap: 8px;
+    margin: 48px 0 0;
+    border-bottom: 2px solid var(--border);
+    flex-wrap: wrap;
+  }
+ 
+  nav.tabs button {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 14px 18px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+ 
+  nav.tabs button:hover {
+    color: var(--pink-dark);
+  }
+ 
+  nav.tabs button.active {
+    color: var(--pink-dark);
+    border-bottom-color: var(--pink);
+  }
+ 
+  nav.tabs button:focus-visible {
+    outline: 2px solid var(--pink-dark);
+    outline-offset: 2px;
+  }
+ 
+  .panel {
+    display: none;
+    padding-top: 32px;
+    animation: fadein 0.2s ease;
+  }
+ 
+  .panel.active { display: block; }
+ 
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+ 
+  .legal-doc {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 28px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-size: 0.94rem;
+  }
+ 
+  .legal-doc h1 {
+    font-size: 1.3rem;
+    color: var(--pink-dark);
+    margin-top: 0;
+  }
+ 
+  .legal-doc h2 {
+    font-size: 1.08rem;
+    color: var(--pink-dark);
+    margin-top: 28px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+ 
+  .legal-doc h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+ 
+  .legal-doc p, .legal-doc li {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+  }
+ 
+  .legal-doc strong { color: var(--ink); }
+ 
+  .legal-doc hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+  }
+ 
+  .delete-panel {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 28px;
+  }
+ 
+  .delete-panel h2 {
+    color: var(--pink-dark);
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+ 
+  .delete-panel p {
+    color: var(--ink-soft);
+  }
+ 
+  .delete-panel .primary-note {
+    background: var(--pink-light);
+    border-radius: 10px;
+    padding: 16px 18px;
+    color: var(--ink);
+    font-size: 0.95rem;
+    margin: 20px 0 28px;
+  }
+ 
+  .btn-delete {
+    display: inline-block;
+    background: var(--pink);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+ 
+  .btn-delete:hover { background: var(--pink-dark); }
+ 
+  .btn-delete:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+ 
+  .delete-fineprint {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+ 
+  footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .panel { animation: none; }
+  }
+</style>
+</head>
+<body>
+ 
+<header>
+  <p class="logo">Leanne</p>
+  <p class="tagline">Your journey, your style, your confidence</p>
+</header>
+ 
+<main>
+ 
+  <section class="description">
+    <h2>About Leanne</h2>
+ 
+      <p>Leanne is a warm, judgement-free AI style and confidence
+      companion &mdash; built for anyone exploring, refining, or
+      rebuilding their personal style, at their own pace, on their own
+      terms.</p>
+ 
+      <p>At its heart, Leanne is a conversation. Take a photo, and
+      Leanne suggests real outfits built from your own wardrobe or new
+      pieces worth adding, shown on you rather than described in the
+      abstract. Every suggested item is a single tap away from the
+      retailer that sells it &mdash; no hunting through search results,
+      no guessing whether something will actually work with what you
+      already own.</p>
+ 
+      <p>Leanne's Wardrobe keeps track of what you have, organises it
+      by season and occasion, and quietly notices what's missing
+      rather than pushing you to buy things you don't need. The
+      interactive Mirror lets you experiment freely with hair, makeup,
+      and styling choices with no pressure and nothing saved unless
+      you choose to keep it. Dream Board is a private place to collect
+      the looks, pieces, and ideas you're working towards. The Shopping
+      and Holiday Planner turns a wish list into a real, budgeted plan
+      &mdash; right down to a full weekend itinerary for our VIP
+      members.</p>
+ 
+      <p>Underneath all of this sits Leanne Academy: 113 lessons across
+      eight courses &mdash; makeup, grooming, hair and wigs, voice,
+      movement, hair removal, clothing and styling, and confidence
+      &mdash; written to be genuinely useful from your very first
+      lesson, with no jargon and no assumptions about who you are or
+      why you're here.</p>
+ 
+      <p>Leanne is built on a simple belief: confidence isn't something
+      you're handed, it's something you build, one small, supported
+      step at a time. Whether you're preparing for your first full
+      look, planning your first outing, or just figuring out what you
+      actually like, Leanne is there to help &mdash; warmly,
+      practically, and entirely without judgement.</p>
+ 
+      <p>Leanne is free to start, with Plus and VIP tiers available for
+      those who want a deeper wardrobe of AI styling, richer learning
+      content, and more from the app as they grow into it. Every
+      shopping link in Leanne, on every tier, works the same way
+      &mdash; because we believe useful features shouldn't disappear
+      behind a paywall, only the AI depth around them should.</p>
+ 
+  </section>
+ 
+  <nav class="tabs" role="tablist" aria-label="Legal and account information">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-privacy" id="tab-privacy" onclick="showPanel('privacy')">Privacy Policy</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-terms" id="tab-terms" onclick="showPanel('terms')">Terms &amp; Conditions</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-delete" id="tab-delete" onclick="showPanel('delete')">Delete Account</button>
+  </nav>
+ 
+  <div id="panel-privacy" class="panel active" role="tabpanel" aria-labelledby="tab-privacy">
+    <div class="legal-doc">
+      <h1>Leanne — Privacy Policy</h1>
+      <p><em>Last updated: 20 August 2026</em></p>
+      <hr />
+      <h2>1. Who we are</h2>
+      <p>Leanne ("we", "us", "our") is a mobile application providing style,
+      wardrobe, shopping and confidence support to its users ("you"). For
+      the purposes of applicable data protection laws (including the UK
+      GDPR and the Data Protection Act 2018), the Data Controller is Ian
+      Roy Williams, trading as Leanne.</p>
+      <p>Contact for privacy matters: privacy@leannestyle.co.uk</p>
+      <p>This app is currently offered in the United Kingdom only.</p>
+      <h2>2. What information we collect</h2>
+      <ul>
+      <li><strong>Account information</strong>: information provided by Apple Sign-In or
+        Google Sign-In (name/email as shared by those providers), used to
+        create and secure your account.</li>
+      <li><strong>Device identifier</strong>: a device-level identifier used solely to
+        apply fair-use rules to the free tier and prevent abuse of free
+        access through repeated account creation.</li>
+      <li><strong>Profile and preference data</strong>: any personalisation settings you
+        choose to provide.</li>
+      <li><strong>Wardrobe data</strong>: clothing/accessory items you add, including
+        category, colour, size, season and notes.</li>
+      <li><strong>Mirror data</strong>: appearance-feature selections you make while using
+        the interactive mirror; images used in this feature.</li>
+      <li><strong>Photos ("User Content")</strong>: images you choose to upload for
+        outfit-suggestion features. We refer to photos and any other media
+        you upload as "User Content" throughout this policy and in our
+        Terms and Conditions, where the ownership, licence, and your
+        responsibilities regarding this content are set out in full.</li>
+      <li><strong>Dream Board data</strong>: items, collections, notes and budget targets
+        you save.</li>
+      <li><strong>Shopping and budget data</strong>: shopping lists, budgets and trip plans
+        you create.</li>
+      <li><strong>Academy progress</strong>: lessons completed, in progress, or locked, and
+        your overall progress.</li>
+      <li><strong>Subscription and usage data</strong>: your tier (Free/Plus/VIP), AI usage
+        counts, and billing status (billing itself is handled by Apple, and
+        by Google Play where applicable once an Android version is
+        released, not stored directly by us).</li>
+      <li><strong>Advertising and tracking data</strong>: if you grant permission via the
+        App Tracking Transparency prompt, our third-party networks (Google
+        AdMob and Skimlinks) collect device advertising identifiers (IDFA),
+        IP addresses, and app interaction events to serve relevant
+        advertisements and to track affiliate shopping commissions. If you
+        do not grant permission, you will still see advertising, but it
+        will not be personalised to you.</li>
+      <li><strong>Usage and diagnostic data</strong>: information about how the app is used,
+        for the purpose of fixing bugs and improving the service.</li>
+      </ul>
+      <p>We do not knowingly collect more information than is needed to provide
+      each feature.</p>
+      <h2>3. How we use your information</h2>
+      <p>We process your data based on specific legal grounds (such as
+      fulfilling our contract with you, our legitimate business interests,
+      or your explicit consent) for the following purposes:</p>
+      <ul>
+      <li><strong>To provide and personalise services</strong>: to operate, maintain, and
+        improve the app's features, including tailoring wardrobe
+        suggestions, styling tips, and interactive mirror outputs to your
+        preferences.</li>
+      <li><strong>To manage subscription tiers</strong>: to operate our subscription tiers
+        (Free/Plus/VIP) via Apple billing, and via Google Play billing where
+        applicable once an Android version is released, keep track of your
+        feature usage limits, and enforce our fair-use rules.</li>
+      <li><strong>To monetise and display advertisements</strong>: to serve relevant
+        advertisements within the app via Google AdMob, using device
+        identifiers to measure ad performance, provided you have given
+        tracking permission via the App Tracking Transparency prompt.</li>
+      <li><strong>To process affiliate commission</strong>: to track outbound shopping
+        clicks and purchases via Skimlinks and our affiliate programme
+        partners, to ensure accurate attribution of referral commissions.</li>
+      <li><strong>To communicate with you</strong>: to send essential system notifications,
+        account confirmations, or critical support updates regarding your
+        account.</li>
+      <li><strong>To prevent abuse and fraud</strong>: to detect, investigate, and prevent
+        fraudulent activity, unauthorised account access, or systematic
+        abuse of our free-tier access rules, including the device-linked
+        free-tier rule described below.</li>
+      <li><strong>To comply with legal obligations</strong>: to meet any applicable legal,
+        regulatory, or tax obligations within the United Kingdom.</li>
+      </ul>
+      <h2>4. Device-linked free tier and abuse prevention</h2>
+      <p>To keep the free tier fair for everyone and to protect our cloud
+      infrastructure costs, we link free-tier usage allowances to your
+      physical device as well as your registered user account.</p>
+      <p><strong>The tracking mechanism.</strong> For this purpose, the app uses a
+      privacy-compliant, non-permanent device identifier known as an
+      Identifier for Vendors (IDFV). We do not collect or store permanent
+      hardware identifiers such as IMEI or MAC addresses.</p>
+      <p><strong>Enforcement rules.</strong> If a device's free allowance has already been
+      used, creating a new account on that same device will not receive a
+      new free allowance. Access to the free tier on that device remains
+      restricted unless the original account is signed back into, or a paid
+      subscription is active.</p>
+      <p><strong>Subscription cancellation.</strong> If a paid subscription is later
+      cancelled, the account and associated device return to standard
+      free-tier eligibility, subject to our fair-use limits.</p>
+      <h2>5. Third parties we share data with</h2>
+      <p>We do not sell your personal information. To provide the app's core
+      services, manage monetisation, and process feature requests, we share
+      specific categories of data with the following third-party service
+      providers:</p>
+      <ul>
+      <li><strong>Rork Auth</strong>: for authentication (Sign in with Apple / Google
+        Sign-In processed through our development platform's managed
+        authentication system).</li>
+      <li><strong>Our backend infrastructure</strong> (Cloudflare Workers and secure
+        storage): to store and process the data described above. We apply
+        comprehensive data security measures, including encryption of data
+        in transit and at rest, strict per-account data isolation (each
+        user's data is only accessible to that user's own authenticated
+        account — no user can read or write another user's data), and
+        zero-data-retention configuration on AI-processing requests wherever
+        technically available from our providers.</li>
+      <li><strong>AI providers</strong> (including Anthropic and Google, via our AI
+        gateway): to process chat messages and generate outfit images. We
+        request zero data retention and disallow use of your data for
+        provider model training on every request where this is supported.
+        One infrastructure hop in this path (our development platform's own
+        proxy) has not been independently confirmed by us to apply the same
+        retention standard; see Section 6 for full detail.</li>
+      <li><strong>RevenueCat</strong>: we share transaction identifiers and receipt tokens
+        with RevenueCat to validate, manage, and activate your subscription
+        tier (Plus/VIP) and to restore purchases.</li>
+      <li><strong>Google AdMob</strong>: to serve advertising to Free-tier users, and to
+        allow you to earn additional free uses by choosing to watch a
+        rewarded advertisement. AdMob may collect device advertising
+        identifiers, IP addresses, and app interaction data as described in
+        Section 5A below.</li>
+      <li><strong>Skimlinks and affiliate networks</strong>: to facilitate affiliate
+        shopping links. When you tap a product link, these partners may
+        process device identifiers and outbound tracking parameters to
+        attribute referral commissions. These partners may act as
+        independent data controllers once you leave the app for their site.</li>
+      </ul>
+      <h2>5A. Advertising, tracking, and your choices</h2>
+      <p>If you are shown advertising (Free tier), we use a consent management
+      platform that runs before advertising is initialised. You will be
+      asked whether you consent to personalised advertising. If you decline
+      or opt out, you will still see advertising, but it will be generic
+      contextual advertising rather than customised to your behaviour.
+      Google AdMob and its network partners act as independent third-party
+      data controllers for this purpose; their data practices are governed
+      by their own privacy terms.</p>
+      <h2>6. Affiliate and advertising disclosure</h2>
+      <p>To help support the operational and infrastructure costs of providing
+      Leanne as a free service, we use the following monetisation methods:</p>
+      <ul>
+      <li><strong>Affiliate referral links</strong>: some product and retail links
+        generated within the app are affiliate tracking links, managed via
+        Skimlinks or direct retailer partnerships. If you follow an
+        outbound link to a merchant site and complete a purchase, we may
+        earn a small financial commission. This does not alter or increase
+        the price you pay.</li>
+      <li><strong>Advertising</strong>: advertisements are displayed to Free-tier users via
+        Google AdMob. This revenue helps fund the cost of providing the
+        app's AI-driven styling tools.</li>
+      </ul>
+      <h2>6A. The one part of our data path we could not independently verify</h2>
+      <p>When you use Leanne's AI features — such as sending styling messages
+      or uploading photos for outfit analysis — your data passes through
+      the following path: this app → our backend infrastructure
+      (Cloudflare Workers and secure storage) → our development platform's
+      own infrastructure proxy → our AI gateway → the AI model provider
+      (Anthropic or Google).</p>
+      <p>We have independently verified and configured strong protections at
+      every hop under our direct control, including enforceable zero data
+      retention (ZDR) configurations on both our AI gateway and the AI
+      model providers themselves, so that your queries and photos are not
+      retained or used for model training at these points.</p>
+      <p><strong>The one exception</strong>: our development platform's own infrastructure
+      proxy, sitting in the middle of this path, forwards your data
+      correctly and without alteration — we have verified this — but its
+      own background logging or retention practices have not been
+      independently confirmed to us in writing at the time of writing.</p>
+      <p><strong>Our commitment</strong>: we have no operational reason to believe your
+      data is exposed or stored inappropriately at this hop. We remain
+      engaged with our platform provider to clarify this point, and we will
+      update this policy — and require renewed consent — the moment this
+      status changes.</p>
+      <h2>7. Data retention and account deletion</h2>
+      <p>We retain your personal data and User Content only for as long as
+      your account remains active. You can delete your account at any time
+      directly through the app's settings. Upon confirming your account
+      deletion:</p>
+      <ul>
+      <li><strong>Immediate production purge</strong>: your wardrobe records, Dream Board
+        configurations, style profile, saved looks, uploaded photos, and
+        usage history are permanently deleted from our active production
+        systems immediately.</li>
+      <li><strong>Backup lifecycle</strong>: encrypted server backups containing this data
+        (retained strictly for disaster recovery and system integrity) are
+        automatically and permanently purged after a limited period. <strong>We
+        are confirming the exact retention window with our infrastructure
+        provider and will state the precise figure here once verified</strong>,
+        rather than publish an unconfirmed number.</li>
+      <li><strong>De-identified abuse prevention</strong>: a non-personal record linked to
+        your device identifier (IDFV) is retained to enforce our fair-use
+        free-tier policy and prevent repeated free-tier abuse. This record
+        contains no personal information and cannot be used to identify
+        you or reconstruct your account.</li>
+      <li><strong>Authentication tokens</strong>: the underlying sign-in credential link
+        with our authentication provider (Rork Auth) may not be
+        independently deletable via an available API at this time. It
+        grants no access to any data once your account has been deleted,
+        and signing in again afterwards creates a new, empty account.</li>
+      <li><strong>Statutory obligations</strong>: some records (such as billing history)
+        may be retained for longer where we are legally required to do so.</li>
+      </ul>
+      <h2>7A. Your responsibility for your own content, and device security</h2>
+      <p>You upload and manage your personal data and photos within Leanne at
+      your own discretion. You are solely responsible for maintaining any
+      backups of your content that you wish to keep outside the app. We do
+      not guarantee the app will be error-free or uninterrupted, and we do
+      not guarantee that our infrastructure providers will never experience
+      downtime. This app handles personal and potentially sensitive data;
+      you are responsible for your own device security (such as using a
+      passcode or biometric lock) to prevent local exposure of data stored
+      or cached on your device.</p>
+      <h2>8. Your legal rights and account deletion</h2>
+      <p>As a user residing in the United Kingdom, you are granted specific
+      statutory rights under the UK GDPR and the Data Protection Act 2018
+      regarding your personal data. These include the right to access,
+      rectify, restrict, export (portability), or object to the processing
+      of your data, alongside the right to erasure ("the right to be
+      forgotten").</p>
+      <p><strong>In-app data export.</strong> You can request a complete copy of your data
+      at any time directly within the app, by navigating to Settings →
+      Account → Get a Copy of My Data. This includes your wardrobe, Dream
+      Board, style profile, saved looks, consent record, and declared
+      year of birth, delivered as a downloadable file with a plain-English
+      guide to what is and is not included (for example, styling photos are
+      never stored and so cannot be included, and calendar events and
+      Academy progress are kept only on your device).</p>
+      <p><strong>In-app account deletion.</strong> You can exercise your right to erasure
+      instantly and at any time directly within the app, by navigating to
+      Settings → Account → Delete Account. This process is automated,
+      requires no contact with support, and immediately triggers the
+      production data purge described in Section 7. Deletion is permanent
+      and cannot be undone or recovered.</p>
+      <p><strong>Web-based deletion request.</strong> A web-based account deletion request
+      option is also available at leannestyle.co.uk/delete-account, for use
+      without needing to open or reinstall the app. (This is required by
+      some app platforms; it is offered here as good practice regardless of
+      which platform you use.)</p>
+      <h2>8A. Data isolation and access control</h2>
+      <p>Every user's data is technically isolated within our infrastructure.
+      Database rules ensure that data can only be read, modified, or
+      written by the specific user's own authenticated account. No user can
+      cross-access, view, or modify another user's profile, wardrobe data,
+      or uploaded imagery. This sandboxing is enforced at the infrastructure
+      level, independent of the app's interface.</p>
+      <h2>8B. Sensitive personal data</h2>
+      <p>Leanne's Academy, chat, and styling features may allow you to
+      voluntarily share nuanced or sensitive personal information with
+      Leanne — for example, body-feature attributes, style-confidence
+      notes, health-related context, or anything else you choose to
+      disclose in conversation.</p>
+      <p><strong>Explicit consent.</strong> We only process this information because you
+      have chosen to share it and have given your explicit, separate
+      consent to this specific processing, via the consent screen shown at
+      first use.</p>
+      <p><strong>Security and purging.</strong> This data is encrypted in transit and at
+      rest, treated with the highest security protocols, and is permanently
+      deleted from our live systems upon account deletion, as described in
+      Section 7.</p>
+      <p><strong>Risk mitigation.</strong> We maintain an internal Data Protection Impact
+      Assessment (DPIA) that details our operational methods for minimising
+      security risks and protecting user privacy in relation to this data.</p>
+      <h2>9. Children's privacy and age verification</h2>
+      <p>The Leanne app is strictly intended for use by individuals aged 16
+      and over. It is not directed at, marketed to, or intended for
+      children below this age.</p>
+      <p><strong>Verification method.</strong> Age eligibility is verified via a
+      self-declared year of birth collected on your device during account
+      registration. This information is never sent to, or stored on, our
+      servers — it stays entirely on your device. Because of this, a fresh
+      install of the app will ask you to confirm your year of birth again,
+      since nothing is retained centrally to check against.</p>
+      <p><strong>User responsibility.</strong> You represent and warrant that the age
+      information you provide during registration is accurate. We rely on
+      this self-certification in good faith to gate access to the app's
+      services.</p>
+      <p><strong>Falsified accounts.</strong> We are not responsible for inaccurate or
+      fraudulent age information knowingly provided by a user to bypass
+      these controls. If we discover, or are notified, that we have
+      inadvertently collected data from someone under the age of 16, we
+      will promptly and permanently delete the account, any uploaded
+      photos, and all associated data from our servers.</p>
+      <h2>10. Security and data breach protocol</h2>
+      <p>We implement robust administrative, technical, and organisational
+      security measures to protect your personal data and User Content from
+      unauthorised access, alteration, or accidental destruction.</p>
+      <p><strong>Our protections</strong> include full encryption in transit and at rest,
+      secure authentication, protected backend credentials, strict
+      per-account data isolation, and zero-data-retention configuration on
+      AI processing wherever supported by our providers.</p>
+      <p><strong>System limitations.</strong> No method of transmission or storage over the
+      internet is 100% secure. We do not guarantee that the app or the
+      third-party infrastructure it relies on will always be available or
+      error-free.</p>
+      <p><strong>Data breach protocol.</strong> In the event of a security compromise or
+      data breach affecting your personal information, we will notify the
+      UK Information Commissioner's Office (ICO) within seventy-two (72)
+      hours of becoming aware of it, where feasible, in line with UK data
+      protection law. Where a breach is likely to result in a high risk to
+      your rights and freedoms, we will also notify affected users without
+      undue delay.</p>
+      <h2>10A. Professional services and medical advice disclaimer</h2>
+      <p>Leanne uses automated artificial intelligence language models and
+      image-generation pipelines to produce interactive style, wardrobe,
+      shopping, and confidence suggestions.</p>
+      <p><strong>Entertainment and information only.</strong> The app is provided strictly
+      for educational, informational, and general entertainment purposes.
+      Leanne is an automated conversational assistant and does not possess
+      human judgement, nor is it a licensed medical professional, clinical
+      psychologist, counsellor, therapist, or healthcare provider.</p>
+      <p><strong>User discretion required.</strong> Any lifestyle, wellbeing, or personal
+      confidence information you voluntarily choose to discuss with Leanne
+      is shared entirely at your own risk and discretion.</p>
+      <p><strong>Exclusion of advice.</strong> You must not rely on Leanne's text or image
+      outputs as professional advice, medical diagnosis, therapeutic
+      counselling, or clinical treatment. Always seek the guidance of a
+      qualified, human professional regarding any physical or mental health
+      matters. We are not liable for real-world actions or purchasing
+      decisions made based on outputs generated by the app.</p>
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this policy from time to time to reflect changes in our
+      app's features, infrastructure, or applicable UK legal requirements.</p>
+      <p><strong>Minor updates</strong> (such as typo or formatting fixes) will be updated
+      directly on this page, with a revised "last updated" date.</p>
+      <p><strong>Material updates</strong> — significant changes to how we process your
+      personal data, changes to our third-party data handlers, or
+      structural changes to our AI data pipeline — will be actively
+      communicated to you within the app, via app update notes, or through
+      an in-app prompt requiring your renewed consent.</p>
+      <h2>12. Contact us and your right to complain</h2>
+      <p>If you have questions, concerns, or requests regarding this policy,
+      your data, or your statutory rights, contact us at
+      privacy@leannestyle.co.uk.</p>
+      <p>If you are a UK resident and believe your personal information has
+      been mishandled, you also have the right to lodge a complaint with
+      the Information Commissioner's Office (ICO) at ico.org.uk.</p>
+    </div>
+  </div>
+ 
+  <div id="panel-terms" class="panel" role="tabpanel" aria-labelledby="tab-terms">
+    <div class="legal-doc">
+      <h1>Leanne — Terms &amp; Conditions / EULA</h1>
+      <p><em>Last updated: 20 August 2026</em></p>
+      <hr />
+      <h2>1. Acceptance of terms</h2>
+      <p>By creating an account or using Leanne, you agree to these Terms. If
+      you do not agree, do not use the app. For the purposes of these
+      Terms, the operating entity is Ian Roy Williams, trading as "Leanne".</p>
+      <h2>2. Eligibility</h2>
+      <p>You must be at least 16 years old to use Leanne. You will be asked to
+      provide your year of birth when creating an account, and you confirm
+      that this information is accurate. We rely on this self-certification
+      in good faith; we are not responsible for a user knowingly providing
+      an inaccurate year of birth to gain access.</p>
+      <p>Leanne is currently offered to users in the United Kingdom only.</p>
+      <h2>3. What Leanne is — and is not</h2>
+      <p>Leanne is a supportive companion app for style, wardrobe, shopping and
+      confidence. <strong>Leanne is not a substitute for professional medical,
+      legal, financial, or emergency advice or services.</strong> Where a topic
+      requires a qualified professional, Leanne will make this clear, and
+      you should seek appropriate professional support.</p>
+      <p>Leanne is an AI conversational assistant provided for informational
+      and entertainment purposes. Leanne is not a licensed medical
+      professional, counsellor, therapist, or healthcare provider. Any
+      health, medical, or similarly sensitive information you choose to
+      discuss with Leanne is shared entirely at your own risk and
+      discretion. You must not rely on Leanne's responses for medical
+      advice, diagnosis, or treatment plans. The first time you send a
+      message to Leanne, you will be shown this disclaimer and asked to
+      confirm you understand it.</p>
+      <h2>4. Your account</h2>
+      <ul>
+      <li>You must sign in using Apple Sign-In or Google Sign-In (Google
+        Play billing applies where relevant, once an Android version is
+        released).</li>
+      <li>You are responsible for keeping your account secure, including the
+        security of your own device (for example, using a passcode or
+        biometric lock to prevent local exposure of data stored or cached
+        on your device).</li>
+      <li>One free tier allowance is permitted per device via its unique
+        Identifier for Vendors (IDFV), as described in our Privacy Policy.
+        Attempting to circumvent this (e.g. through multiple accounts or
+        devices to repeatedly claim free access) is a material breach of
+        these Terms and may result in restricted access.</li>
+      <li>You upload and manage your personal data and photos within Leanne at
+        your own discretion and risk. You are solely responsible for
+        maintaining any backups of your content that you wish to keep
+        outside the app. We do not guarantee the app will be error-free, and
+        we do not guarantee that our infrastructure or service providers
+        (including Rork and Cloudflare) will never experience downtime or
+        interruption.</li>
+      </ul>
+      <h2>5. Subscriptions</h2>
+      <ul>
+      <li><strong>Leanne Free</strong>: no cost; limited AI access; supported by
+        advertising.</li>
+      <li><strong>Leanne Plus</strong>: £5.99/month or £49.99/year, billed through Apple,
+        or Google Play once an Android version is released; 10 AI uses per
+        24 hours.</li>
+      <li><strong>Leanne VIP</strong>: £16.99/month or £149.99/year, billed through Apple,
+        or Google Play once an Android version is released; unlimited AI
+        use subject to a fair-use cap.</li>
+      <li>Subscriptions automatically renew unless cancelled at least 24 hours
+        before the end of the current period, in accordance with Apple's and
+        Google's respective subscription policies.</li>
+      <li>Cancellations are managed through your Apple ID or Google Account
+        subscription settings, not within the app directly.</li>
+      <li>Prices are subject to change; you will be notified in advance of any
+        change affecting an active subscription, in accordance with Apple's
+        and Google's policies.</li>
+      <li>Refunds are handled by Apple or Google according to their respective
+        policies; Leanne does not process refunds directly.</li>
+      </ul>
+      <h2>6. Acceptable use</h2>
+      <p>You agree not to:</p>
+      <ul>
+      <li>Upload photos of any person without that person's consent</li>
+      <li>Use the app for any unlawful purpose</li>
+      <li>Attempt to circumvent free-tier limits, security measures, or
+        subscription requirements</li>
+      <li>Misuse, scrape, or attempt to extract the app's underlying data or
+        AI systems</li>
+      <li>Use the app to harass, harm, or exploit others</li>
+      </ul>
+      <h2>7. User content</h2>
+      <p>By uploading, storing, or sharing images, photographs, or any other
+      media ("User Content") to the app, you retain all of your ownership
+      rights in your User Content. However, by uploading User Content, you
+      grant Ian Roy Williams a worldwide, non-exclusive, royalty-free,
+      sub-licensable, and transferable licence to host, store, cache,
+      modify, display, and reproduce your User Content solely for the
+      purpose of operating, improving, and providing the app's services to
+      you. You acknowledge that your User Content will be hosted and
+      processed by our third-party infrastructure partner, Rork.</p>
+      <p>AI-generated outputs (e.g. mirror looks, outfit suggestions) are
+      provided for your personal use.</p>
+      <p><strong>Your responsibilities and representations.</strong> You are solely
+      responsible for the User Content you upload. By submitting content,
+      you represent and warrant that:</p>
+      <p>(a) you own the User Content or have all necessary legal rights,
+      licences, and permissions to upload and use it;</p>
+      <p>(b) the User Content does not infringe upon the intellectual property
+      rights, privacy rights, or publicity rights of any third party; and</p>
+      <p>(c) the User Content does not contain any material that is
+      defamatory, obscene, harmful, abusive, sexually explicit, or otherwise
+      illegal under UK law.</p>
+      <p><strong>Monitoring and right to remove.</strong> We do not pre-screen all User
+      Content, but reserve the right (without any obligation to do so) to
+      monitor, review, flag, or permanently delete any User Content at any
+      time, without prior notice, if it is deemed in violation of these
+      Terms or reported by other users.</p>
+      <p><strong>Indemnity for content infringement.</strong> You agree to fully indemnify,
+      defend, and hold harmless Ian Roy Williams from and against any and
+      all claims, liabilities, damages, losses, or expenses (including legal
+      fees) arising out of or in any way connected with any User Content you
+      upload that infringes third-party rights or violates applicable laws.</p>
+      <p><strong>Zero-tolerance for illegal or infringing content.</strong> Any user found
+      uploading copyrighted imagery without permission, or uploading illegal
+      media, will have their account and data permanently deleted from our
+      servers immediately, and may be permanently banned from using the
+      app.</p>
+      <h2>8. Affiliate links and advertising</h2>
+      <p>This app contains affiliate links. If you click through to a retailer
+      and make a purchase, we may receive a small financial commission. This
+      does not affect the price you pay. Affiliate relationships are
+      disclosed at the point of use.</p>
+      <p>Free-tier users may see advertising, served via Google AdMob, who
+      acts as an independent third-party data controller and may collect
+      device identifiers and tracking data for this purpose. Before
+      advertising is initialised, you will be asked for your consent to
+      personalised advertising via a consent management platform; if you
+      decline, you will still see advertising, but it will be generic
+      rather than personalised. We do not control the content of individual
+      third-party adverts.</p>
+      <h2>9. Disclaimers</h2>
+      <ul>
+      <li><strong>The Mirror feature</strong> is for creative exploration and
+        confidence-building. It does not guarantee that any generated
+        appearance or digital outfit selection will exactly match a
+        real-world styling result or physical garment fit.</li>
+      <li><strong>Pricing data</strong>: product and pricing information is pulled from
+        third-party affiliate feeds and may not always be current, active,
+        or accurate at the time of viewing.</li>
+      <li><strong>No professional liability</strong>: Leanne does not provide medical,
+        legal, financial, or emergency advice. You assume responsibility
+        for any styling, wardrobe, or purchasing decisions made based on
+        the app's outputs.</li>
+      </ul>
+      <h2>10. Limitation of liability</h2>
+      <p>Leanne is operated by Ian Roy Williams, trading as Leanne, based in
+      England. Nothing in these Terms excludes or limits liability for
+      death or personal injury caused by negligence, fraud, or any other
+      liability that cannot be excluded or limited by law.</p>
+      <p><strong>"As-is" provision.</strong> To the maximum extent permitted by applicable
+      UK law, the app is provided "as is" and "as available," with all
+      faults and defects, without warranty of any kind. Ian Roy Williams
+      expressly disclaims all warranties, whether express, implied,
+      statutory, or otherwise, regarding the app.</p>
+      <p><strong>Cap on damages.</strong> To the maximum extent permitted by applicable UK
+      law, in no event shall Ian Roy Williams be liable for any special,
+      incidental, indirect, or consequential damages whatsoever — including
+      but not limited to damages for loss of profits, loss of data or
+      photos, business interruption, or loss of privacy — arising out of or
+      in any way related to your use of, or inability to use, the app, even
+      if Ian Roy Williams has been advised of the possibility of such
+      damages.</p>
+      <p><strong>Maximum financial liability.</strong> Notwithstanding any damages you might
+      incur, the entire liability of Ian Roy Williams under any provision of
+      these Terms, and your exclusive remedy for all of the foregoing, is
+      limited to the greater of: (a) the total amount you actually paid
+      through the app via RevenueCat purchases in the twelve (12) months
+      preceding the claim, or (b) £50.00 GBP.</p>
+      <h2>11. Account termination and deletion</h2>
+      <p>You may permanently delete your account and all associated data at
+      any time directly within the app (Settings → Account → Delete
+      Account). Before deletion completes, you will be shown a confirmation
+      screen stating: "Permanently delete account? This action is
+      irreversible. All of your personal data and photos will be
+      immediately and permanently deleted from our servers. We cannot
+      recover this data for you." Deleting your account also revokes the
+      underlying Apple/Google sign-in link used to authenticate you, ending
+      the live connection between your device and your account.</p>
+      <p>A web-based account deletion request option is also available at
+      leannestyle.co.uk/delete-account, for use without needing to open the
+      app. (This is required by some app platforms; it is offered here as
+      good practice regardless of which platform you use.)</p>
+      <p>The Developer reserves the right to suspend or permanently terminate
+      accounts that are found to be in material breach of these Terms.</p>
+      <h2>12. Changes to these terms</h2>
+      <p>We may update these Terms from time to time. Continued use of the app
+      after changes take effect constitutes acceptance of the updated Terms.</p>
+      <h2>13. Governing law</h2>
+      <p>These Terms are governed by the laws of England and Wales. The app is
+      currently offered to UK users only; this will be revisited if the app
+      expands to the EU or US in future, as additional jurisdiction-specific
+      terms would then be required.</p>
+      <h2>14. Contact us</h2>
+      <p>Questions about these Terms can be sent to privacy@leannestyle.co.uk.</p>
+    </div>
+  </div>
+ 
+  <div id="panel-delete" class="panel" role="tabpanel" aria-labelledby="tab-delete">
+    <div class="delete-panel">
+      <h2>Delete Your Account</h2>
+      <p>The fastest way to delete your account is directly inside the
+      Leanne app: go to <strong>Settings &rarr; Account &rarr; Delete
+      Account</strong>. This is immediate, permanent, and needs no
+      contact with us at all.</p>
+ 
+      <div class="primary-note">
+        If you can't open the app &mdash; for example, if you've
+        already uninstalled it &mdash; you can request deletion here
+        instead. We'll action your request promptly by email.
+      </div>
+ 
+      <a
+        class="btn-delete"
+        href="mailto:privacy@leannestyle.co.uk?subject=Account%20Deletion%20Request&body=Hi%2C%0A%0AI%20would%20like%20to%20request%20permanent%20deletion%20of%20my%20Leanne%20account%20and%20all%20associated%20data.%0A%0AThe%20email%20address%20or%20name%20associated%20with%20my%20account%20is%3A%20%5Byour%20details%20here%5D%0A%0AThank%20you."
+      >
+        Request Account Deletion
+      </a>
+ 
+      <p class="delete-fineprint">
+        This opens your email app with a pre-filled request to
+        <strong>privacy@leannestyle.co.uk</strong>. Deletion is
+        permanent and cannot be undone once processed. See our
+        <a href="#" onclick="showPanel('privacy'); return false;">Privacy
+        Policy</a> for full detail on what gets deleted and when.
+      </p>
+    </div>
+  </div>
+ 
+</main>
+ 
+<footer>
+  &copy; 2026 Ian Roy Williams, trading as Leanne. All rights reserved.
+</footer>
+ 
+<script>
+  function showPanel(name) {
+    document.querySelectorAll('.panel').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    document.getElementById('panel-' + name).classList.add('active');
+    var btn = document.getElementById('tab-' + name);
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    window.scrollTo({ top: document.querySelector('nav.tabs').offsetTop - 20, behavior: 'smooth' });
+  }
+ 
+  // Allow deep-linking via URL hash, e.g. leannestyle.co.uk/#privacy
+  (function() {
+    var hash = window.location.hash.replace('#', '');
+    if (['privacy', 'terms', 'delete'].includes(hash)) {
+      showPanel(hash);
+    }
+  })();
+</script>
+ 
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ass="container"> <h1>Leanne</h1> <!-- Paste your app description between these two tags below --> <p class="description">Something exciting is coming soon. We are currently working hard behind the scenes to bring you a brand new app experience.</p> <div class="btn-container"> <!-- 1. GET IN TOUCH BUTTON (Points to your custom iCloud email) --> <a href="mailto:hello@leannestyle.co.uk" class="cta-button">Get In Touch</a> <!-- 2. DELETE ACCOUNT BUTTON (Points to your custom iCloud email with an automatic subject line) --><a href="mailto:hello@leannestyle.co.uk?subject=Account%20Deletion%20Request" class="delete-button">Delete Account</a> </div> <div class="footer"> <!-- 3. TERMS & CONDITIONS AND PRIVACY LINKS --> <div class="legal-links" style="margin-bottom: 15px;"> <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms & Conditions</a> </div> &copy; 2026 LEANNE. ALL RIGHTS RESERVED. </div> </div> </body> </html>
