@@ -913,7 +913,7 @@
   // Allow deep-linking via URL hash, e.g. leannestyle.co.uk/#privacy
   (function() {
     var hash = window.location.hash.replace('#', '');
-    if (['privacy', 'terms', 'delete'].includes(hash)) {
+     if (['privacy', 'terms', 'delete', 'support'].includes(hash)) {
       showPanel(hash);
     }
   })();
