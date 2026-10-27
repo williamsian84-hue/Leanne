@@ -290,7 +290,7 @@
   <div id="panel-privacy" class="panel active" role="tabpanel" aria-labelledby="tab-privacy">
     <div class="legal-doc">
       <h1>Leanne — Privacy Policy</h1>
-      <p><em>Last updated: 20 August 2026</em></p>
+      <p><em>Last updated: 27 October 2026</em></p>
       <hr />
       <h2>1. Who we are</h2>
       <p>Leanne ("we", "us", "our") is a mobile application providing style,
@@ -302,9 +302,14 @@
       <p>This app is currently offered in the United Kingdom only.</p>
       <h2>2. What information we collect</h2>
       <ul>
-      <li><strong>Account information</strong>: information provided by Apple Sign-In or
-        Google Sign-In (name/email as shared by those providers), used to
-        create and secure your account.</li>
+      <li><strong>Account information</strong>: when you sign in with Apple or Google,
+        we receive your name and email address (as shared by Apple or
+        Google) and a unique account ID from that provider. Your name and
+        email are kept on your device so the app can show them to you. Our
+        server keeps the provider's account ID, linked to your Leanne
+        account, so it knows the sign-in belongs to you. It also keeps an
+        email fingerprint (explained in Section 3A). It does not keep your
+        email address itself.</li>
       <li><strong>Device identifier</strong>: a device-level identifier used solely to
         apply fair-use rules to the free tier and prevent abuse of free
         access through repeated account creation.</li>
@@ -323,6 +328,9 @@
         you save.</li>
       <li><strong>Shopping and budget data</strong>: shopping lists, budgets and trip plans
         you create.</li>
+      <li><strong>Calendar data</strong>: events you save in the app's Calendar —
+        title, date and time, notes and any outfit you've linked to
+        them.</li>
       <li><strong>Academy progress</strong>: lessons completed, in progress, or locked, and
         your overall progress.</li>
       <li><strong>Subscription and usage data</strong>: your tier (Free/Plus/VIP), AI usage
@@ -338,6 +346,9 @@
         will not be personalised to you.</li>
       <li><strong>Usage and diagnostic data</strong>: information about how the app is used,
         for the purpose of fixing bugs and improving the service.</li>
+      <li><strong>App lock setting</strong>: if you turn on the optional Face ID lock,
+        the app remembers that choice on your device. It is not sent to
+        us.</li>
       </ul>
       <p>We do not knowingly collect more information than is needed to provide
       each feature.</p>
@@ -371,6 +382,34 @@
       <li><strong>To comply with legal obligations</strong>: to meet any applicable legal,
         regulatory, or tax obligations within the United Kingdom.</li>
       </ul>
+      <h2>3A. Signing in and keeping your account yours</h2>
+      <p><strong>How sign-in works.</strong> From version 1.0.1 (build 43), Leanne signs
+      you in directly with Sign in with Apple or Google Sign-In. Apple or
+      Google confirm who you are. Our server checks that confirmation and
+      then gives your device its own secure Leanne sign-in. Your sign-in
+      details are stored in your device's secure storage (the iOS
+      Keychain). On our server, your sign-in is only ever stored in
+      scrambled form. You stay signed in until you sign out, or until you
+      haven't opened the app for 180 days.</p>
+      <p><strong>The email fingerprint.</strong> So that you always get back to your own
+      account, with your wardrobe, Dream Board, outfits and subscription
+      intact, we keep an email fingerprint for each account. It is a
+      scrambled code made from your email address using a secret key that
+      only our server holds. It is not your email address and can't be
+      read as one. It can only be used to check whether an email you sign
+      in with matches an account we already know. We only use email
+      addresses that Apple or Google confirm as verified. If you are still
+      using an earlier version of Leanne, our server makes this
+      fingerprint from the email Rork Auth sends with each request, ready
+      for when you update. We use it only to match you to your existing
+      account, and for our support team to find your account if you ask
+      us to. We never use it for marketing or share it.</p>
+      <p><strong>If you use Apple's "Hide My Email".</strong> The fingerprint is made
+      from the private relay address Apple gives us, not your real email
+      address.</p>
+      <p><strong>Legal basis.</strong> We process this to provide the service you've
+      signed up for (contract) and to keep your account secure (legitimate
+      interests).</p>
       <h2>4. Device-linked free tier and abuse prevention</h2>
       <p>To keep the free tier fair for everyone and to protect our cloud
       infrastructure costs, we link free-tier usage allowances to your
@@ -393,9 +432,15 @@
       specific categories of data with the following third-party service
       providers:</p>
       <ul>
-      <li><strong>Rork Auth</strong>: for authentication (Sign in with Apple / Google
-        Sign-In processed through our development platform's managed
-        authentication system).</li>
+      <li><strong>Apple and Google</strong>: for sign-in. When you choose Sign in with
+        Apple or Google Sign-In, Apple or Google confirm your identity to us
+        directly. If you signed in with Apple and later delete your account,
+        we tell Apple to end Leanne's access to your Apple ID. Apple and
+        Google handle your sign-in under their own privacy terms.</li>
+      <li><strong>Rork Auth</strong>: our development platform's managed sign-in
+        system. It handled sign-in before version 1.0.1 and still does for
+        anyone using an earlier version. Accounts created before 1.0.1 may
+        still have a sign-in record held by Rork Auth.</li>
       <li><strong>Our backend infrastructure</strong> (Cloudflare Workers and secure
         storage): to store and process the data described above. We apply
         comprehensive data security measures, including encryption of data
@@ -480,6 +525,15 @@
         configurations, style profile, saved looks, uploaded photos, and
         usage history are permanently deleted from our active production
         systems immediately.</li>
+      <li><strong>Sign-in records</strong>: when you delete your account, we also
+        permanently delete the links between your Apple or Google account
+        and Leanne, your email fingerprint, and all your Leanne sign-ins,
+        which signs you out everywhere. If you signed in with Apple, we also
+        ask Apple to end Leanne's access to your Apple ID, so Leanne no
+        longer appears under "Sign in with Apple" in your Apple ID settings.
+        Google does not need this step. If you'd like to remove Leanne from
+        your Google account too, you can do so at
+        myaccount.google.com/connections.</li>
       <li><strong>Backup lifecycle</strong>: encrypted server backups containing this data
         (retained strictly for disaster recovery and system integrity) are
         automatically and permanently purged after 30 days. Our
@@ -490,11 +544,13 @@
         free-tier policy and prevent repeated free-tier abuse. This record
         contains no personal information and cannot be used to identify
         you or reconstruct your account.</li>
-      <li><strong>Authentication tokens</strong>: the underlying sign-in credential link
-        with our authentication provider (Rork Auth) may not be
-        independently deletable via an available API at this time. It
-        grants no access to any data once your account has been deleted,
-        and signing in again afterwards creates a new, empty account.</li>
+      <li><strong>Earlier sign-in records</strong>: if your account was created before
+        version 1.0.1, a sign-in record may still exist with our previous
+        sign-in provider (Rork Auth). There may not yet be a way for us to
+        delete it. It gives no access to any of your data once your account
+        has been deleted. Because your email fingerprint and sign-in links
+        are deleted too, signing in again afterwards always creates a new,
+        empty account.</li>
       <li><strong>Statutory obligations</strong>: some records (such as billing history)
         may be retained for longer where we are legally required to do so.</li>
       </ul>
@@ -508,6 +564,14 @@
       you are responsible for your own device security (such as using a
       passcode or biometric lock) to prevent local exposure of data stored
       or cached on your device.</p>
+      <p><strong>Optional Face ID lock.</strong> Leanne offers an optional Face ID lock,
+      which is off unless you turn it on in your Profile. When it's on, the
+      app asks for Face ID when you open it, and again if it's been in the
+      background for more than a minute. Your device passcode works too.
+      The app is also blurred in the app switcher. Face ID is handled
+      entirely by your iPhone: Leanne never sees, receives or stores your
+      face data. It only learns whether the check succeeded. The setting
+      applies only to the device you turn it on for.</p>
       <h2>8. Your legal rights and account deletion</h2>
       <p>As a user residing in the United Kingdom, you are granted specific
       statutory rights under the UK GDPR and the Data Protection Act 2018
@@ -520,9 +584,10 @@
       Account → Get a Copy of My Data. This includes your wardrobe, Dream
       Board, style profile, saved looks, consent record, and declared
       year of birth, delivered as a downloadable file with a plain-English
-      guide to what is and is not included (for example, styling photos are
-      never stored and so cannot be included, and calendar events and
-      Academy progress are kept only on your device).</p>
+      guide to what is and is not included (for example, styling photos and
+      your chat history with Leanne are never stored and so cannot be
+      included, while your calendar events and Academy progress are saved
+      to your account and so are included).</p>
       <p><strong>In-app account deletion.</strong> You can exercise your right to erasure
       instantly and at any time directly within the app, by navigating to
       Settings → Account → Delete Account. This process is automated,
@@ -583,7 +648,10 @@
       security measures to protect your personal data and User Content from
       unauthorised access, alteration, or accidental destruction.</p>
       <p><strong>Our protections</strong> include full encryption in transit and at rest,
-      secure authentication, protected backend credentials, strict
+      secure authentication (direct Sign in with Apple and Google Sign-In,
+      with sign-in details stored only in scrambled form on our server and
+      in your device's secure storage), an optional Face ID app lock,
+      protected backend credentials, strict
       per-account data isolation, and zero-data-retention configuration on
       AI processing wherever supported by our providers.</p>
       <p><strong>System limitations.</strong> No method of transmission or storage over the
@@ -638,7 +706,7 @@
   <div id="panel-terms" class="panel" role="tabpanel" aria-labelledby="tab-terms">
     <div class="legal-doc">
       <h1>Leanne — Terms &amp; Conditions / EULA</h1>
-      <p><em>Last updated: 20 August 2026</em></p>
+      <p><em>Last updated: 27 October 2026</em></p>
       <hr />
       <h2>1. Acceptance of terms</h2>
       <p>By creating an account or using Leanne, you agree to these Terms. If
@@ -815,9 +883,12 @@
       screen stating: "Permanently delete account? This action is
       irreversible. All of your personal data and photos will be
       immediately and permanently deleted from our servers. We cannot
-      recover this data for you." Deleting your account also revokes the
-      underlying Apple/Google sign-in link used to authenticate you, ending
-      the live connection between your device and your account.</p>
+      recover this data for you." Deleting your account also deletes the
+      sign-in links between your Apple or Google account and Leanne,
+      signing you out everywhere. If you signed in with Apple, we also ask
+      Apple to end Leanne's access to your Apple ID. If you signed in with
+      Google, you can remove Leanne from your Google account at
+      myaccount.google.com/connections.</p>
       <p>A web-based account deletion request option is also available at
       leannestyle.co.uk/delete-account, for use without needing to open the
       app. (This is required by some app platforms; it is offered here as
@@ -925,8 +996,9 @@
   <a href="https://www.facebook.com/profile.php?id=61593941762667" style="margin: 0 10px;">Facebook</a> |
   <a href="https://www.tiktok.com/@leanne.app" style="margin: 0 10px;">TikTok</a>
 </div>
-<iframe data-tally-src="https://tally.so/embed/eqXM5q?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="177" frameborder="0" marginheight="0" marginwidth="0" title="Leanne App Waitlist"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<div style="text-align:center; margin: 28px 0 40px;">
+  <a class="btn-delete" href="https://apps.apple.com/gb/app/leanne/id6805299213">Download Leanne on the App Store</a>
+  <p style="color: var(--ink-soft); font-size: 0.85rem; margin-top: 10px;">Free on iPhone</p>
+</div>
 </body>
 </html>
- 
