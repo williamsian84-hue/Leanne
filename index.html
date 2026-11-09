@@ -216,6 +216,60 @@
     font-size: 0.85rem;
   }
  
+
+  /* ---------- Added Nov 2026: shopping + screenshots ---------- */
+  .header-cta { margin-top: 22px; }
+  .section { margin-top: 56px; }
+  .section h2 { font-size: 1.4rem; color: var(--pink-dark); margin: 0 0 10px; }
+  .section .lede { color: var(--ink-soft); margin: 0 0 24px; }
+
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .steps li {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 18px 16px 62px; position: relative; color: var(--ink-soft);
+  }
+  .steps li strong { color: var(--ink); display: block; margin-bottom: 2px; }
+  .steps li::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; left: 18px; top: 16px; width: 30px; height: 30px;
+    border-radius: 50%; background: var(--pink-light); color: var(--pink-dark);
+    font-weight: 800; display: flex; align-items: center; justify-content: center;
+  }
+  .steps { counter-reset: step; }
+
+  .disclosure {
+    margin-top: 18px; background: var(--pink-light); border-radius: 10px;
+    padding: 14px 16px; font-size: 0.92rem; color: var(--ink);
+  }
+
+  .feature { margin-top: 40px; }
+  .feature h3 { font-size: 1.15rem; margin: 0 0 6px; color: var(--ink); }
+  .feature p { color: var(--ink-soft); margin: 0 0 16px; }
+  .phones { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .phone { margin: 0; }
+  .phone .frame {
+    background: #111; border-radius: 22px; padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    max-height: 520px; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .phone img { width: 100%; display: block; border-radius: 16px; }
+  .phone figcaption {
+    font-size: 0.82rem; color: var(--ink-soft); text-align: center; margin-top: 8px;
+  }
+  .scroll-hint { font-size: 0.82rem; color: var(--ink-soft); font-style: italic; margin: 0 0 6px; }
+
+  .maker {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 14px;
+    padding: 22px 22px;
+  }
+  .maker p { color: var(--ink-soft); margin: 0 0 12px; }
+  .maker p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 520px) {
+    .phones { gap: 10px; }
+    .phone .frame { max-height: 440px; border-radius: 18px; padding: 4px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .panel { animation: none; }
   }
@@ -226,6 +280,7 @@
 <header>
   <p class="logo">Leanne</p>
   <p class="tagline">Your journey, your style, your confidence</p>
+  <div class="header-cta"><a class="btn-delete" href="https://apps.apple.com/gb/app/leanne/id6805299213">Download free on the App Store</a></div>
 </header>
  
 <main>
@@ -296,6 +351,89 @@
  
   </section>
  
+
+  <section class="section" id="how-shopping-works">
+    <h2>How shopping works in Leanne</h2>
+    <p class="lede">Leanne is an iPhone app, live on the UK App Store since
+    26 October 2026. Shopping is built into every look it creates.</p>
+    <ol class="steps">
+      <li><strong>Ask for a look</strong>Users ask Leanne for an outfit for an
+      occasion, the weather, or around a piece they already own &mdash; in
+      Chat, in the Mirror (styled on their own photo) or for an event in
+      their Calendar.</li>
+      <li><strong>Leanne builds three complete outfits</strong>Each look lists
+      every piece with a short note on why it works, and uses the user's own
+      Wardrobe first.</li>
+      <li><strong>Owned pieces are marked &ldquo;Yours&rdquo;</strong>Clothes
+      the user already has never get a shop link, so Leanne never pushes
+      people to rebuy what they own.</li>
+      <li><strong>New pieces link to the retailer</strong>Anything missing is
+      suggested with a one-tap link to a UK retailer (for example ASOS,
+      Zalando, M&amp;S or John Lewis). Users can also add pieces to their
+      Shopping list and tick them off when bought.</li>
+    </ol>
+    <div class="disclosure"><strong>Affiliate disclosure:</strong> some
+    retailer links in Leanne are affiliate links. If someone buys after
+    tapping one, Leanne may earn a small commission at no extra cost to them.
+    We don't run brand-name ads, coupon codes or cashback.</div>
+  </section>
+
+  <section class="section" id="screens">
+    <h2>See Leanne in action</h2>
+    <p class="lede">Real screens from the app, for womenswear and menswear.
+    Every user chooses their own colours and can rename their assistant
+    &mdash; here as &ldquo;Leanne&rdquo; in Plum &amp; Pink and
+    &ldquo;Alex&rdquo; in Midnight.</p>
+  <div class="feature">
+    <h3>Mirror: styled on your own photo</h3>
+    <p>Three looks drawn on the user's photo, with &ldquo;Shop the look&rdquo; underneath. Pieces they own say &ldquo;Yours&rdquo;; new pieces link straight to the retailer.</p>
+    <p class="scroll-hint">Scroll inside each screen to see the full page.</p>
+    <div class="phones">
+      <figure class="phone"><div class="frame"><img src="screen-mirror-her.jpg" alt="Leanne Mirror look: City Knit and Check, with shop links" loading="lazy"></div><figcaption>Womenswear</figcaption></figure>
+      <figure class="phone"><div class="frame"><img src="screen-mirror-him.jpg" alt="Leanne Mirror looks for menswear with shop links" loading="lazy"></div><figcaption>Menswear</figcaption></figure>
+    </div>
+  </div>
+  <div class="feature">
+    <h3>Calendar: dressed for the event</h3>
+    <p>Add an event and Leanne plans three outfits for it, with retailer links for anything new and a getting-ready timeline.</p>
+    <div class="phones">
+      <figure class="phone"><div class="frame"><img src="screen-calendar-her.jpg" alt="Calendar looks for a Christmas party" loading="lazy"></div><figcaption>Christmas party</figcaption></figure>
+      <figure class="phone"><div class="frame"><img src="screen-calendar-him.jpg" alt="Calendar looks for a work Christmas do" loading="lazy"></div><figcaption>Work Christmas do</figcaption></figure>
+    </div>
+  </div>
+  <div class="feature">
+    <h3>Chat: a stylist to talk to</h3>
+    <p>Leanne asks whether to shop for something new or use the user's wardrobe, then puts the outfit together and offers to add missing pieces to their Shopping list.</p>
+    <div class="phones">
+      <figure class="phone"><div class="frame"><img src="screen-chat-her.jpg" alt="Chat with Leanne about a jumper dress for an evening out" loading="lazy"></div><figcaption>An evening out</figcaption></figure>
+      <figure class="phone"><div class="frame"><img src="screen-chat-him.jpg" alt="Chat with Alex about a night out" loading="lazy"></div><figcaption>A night out</figcaption></figure>
+    </div>
+  </div>
+  <div class="feature">
+    <h3>Wardrobe and Try-on hour</h3>
+    <p>Users photograph what they own, and Leanne builds looks from it. Try-on hour is a free feature: wear a look at home for an hour, then rate how it felt.</p>
+    <div class="phones">
+      <figure class="phone"><div class="frame"><img src="screen-wardrobe-him.jpg" alt="Wardrobe with clothes organised by category" loading="lazy"></div><figcaption>Wardrobe</figcaption></figure>
+      <figure class="phone"><div class="frame"><img src="screen-tryon-her.jpg" alt="Try-on hour: choosing a look and starting the timer" loading="lazy"></div><figcaption>Try-on hour</figcaption></figure>
+    </div>
+  </div>
+  </section>
+
+  <section class="section" id="maker">
+    <h2>Who makes Leanne</h2>
+    <div class="maker">
+      <p>Leanne is made by Ian Williams, an independent developer in England,
+      trading as Leanne. It's for anyone aged 16 and over in the UK &mdash;
+      womenswear, menswear or a mix &mdash; and it contains no adult
+      content.</p>
+      <p>Business and partnership enquiries:
+      <a href="mailto:business@leannestyle.co.uk">business@leannestyle.co.uk</a></p>
+      <p>Follow Leanne on
+      <a href="https://www.tiktok.com/@leanne.app">TikTok</a> and
+      <a href="https://www.facebook.com/profile.php?id=61593941762667">Facebook</a>.</p>
+    </div>
+  </section>
+
   <nav class="tabs" role="tablist" aria-label="Legal and account information">
     <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-privacy" id="tab-privacy" onclick="showPanel('privacy')">Privacy Policy</button>
     <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-terms" id="tab-terms" onclick="showPanel('terms')">Terms &amp; Conditions</button>
@@ -1053,7 +1191,6 @@
  
 <script type="text/javascript" src="https://s.skimresources.com/js/307996X1796292.skimlinks.js"></script>
 <div style="text-align:center; margin: 20px 0;">
-  <a href="https://youtube.com/@LeanneApp" style="margin: 0 10px;">YouTube</a> |
   <a href="https://www.facebook.com/profile.php?id=61593941762667" style="margin: 0 10px;">Facebook</a> |
   <a href="https://www.tiktok.com/@leanne.app" style="margin: 0 10px;">TikTok</a>
 </div>
@@ -1063,4 +1200,3 @@
 </div>
 </body>
 </html>
- 
